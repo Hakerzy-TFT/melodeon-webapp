@@ -1,14 +1,14 @@
 <template>
-  <div id="description">
-    <Descript />
+  <div id="start">
+    <Home />
   </div>
 </template>
 <script>
-import Descript from "./components/Descript.vue";
+import Home from "./components/Home.vue";
 export default {
-  name: "Description",
+  name: "start",
   components: {
-    Descript,
+    Home,
   },
 };
 </script>
