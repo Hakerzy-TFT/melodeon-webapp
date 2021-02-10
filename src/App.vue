@@ -1,5 +1,9 @@
 <template>
   <div id="description">
+    
+    
+    <router-link to="/Home"><button>Go to main Start page</button></router-link>
+    <router-view></router-view>
     <Descript />
   </div>
 </template>

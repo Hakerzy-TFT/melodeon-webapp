@@ -1,7 +1,6 @@
 <template>
   <div id="description">
-      <button v-on:click="gotoStart()">Go to main Start page</button>
-      <router-view></router-view>
+      
   </div>
 </template>
 
