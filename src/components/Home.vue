@@ -70,8 +70,9 @@ export default {
 #loginbutton {
   position: absolute;
   background-image: url("../assets/right_arrow.gif");
-  margin-top: 1%;
-  margin-left: 1%;
+  margin-top: 60%;
+  margin-left: 10%;
+
   opacity: 0.9;
   background-size: cover;
   height: 40px;
