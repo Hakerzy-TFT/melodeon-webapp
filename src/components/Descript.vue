@@ -48,16 +48,19 @@
         </div>
         <div id="contact" v-show="cont">Via e-mail:<br /></div>
       </div>
-      <div id="mainPageButton">
-        <router-link to="/Home"
-          ><button
-            id="home"
-            type="button"
-            class="btn btn-dark"
-          >
-            Go to main Start page
-          </button></router-link
+      <div
+        id="mainPageButton"
+        :disabled="!this.$store.state.appState.stateOfApp"
+      >
+        <router-link
+          to="/Home"
+          id="home"
+          tag="button"
+          class="btn btn-dark"
+          :disabled="!this.$store.state.appState.stateOfApp"
         >
+          Go to main Start page
+        </router-link>
       </div>
     </div>
   </div>
@@ -74,9 +77,6 @@ export default {
     };
   },
   methods: {
-    gotoStart() {
-      this.$router.push("/Home");
-    },
     setTech() {
       this.tech = true;
       this.abou = false;
@@ -100,9 +100,9 @@ export default {
 #description {
   background-size: cover;
   background-repeat: no-repeat;
-  width:100vw;
+  width: 100vw;
   height: 100vh;
-  overflow:hidden;
+  overflow: hidden;
   background-image: url("../assets/papers.png");
 }
 #mainPageButton {

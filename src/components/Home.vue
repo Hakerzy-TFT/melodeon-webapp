@@ -33,6 +33,11 @@ export default {
       alert(this.login_token);
     },
   },
+  beforeCreate() {
+      if(!this.$store.state.appState.stateOfApp){
+        this.$router.go(-1);
+      }
+    },
 };
 </script>
 
