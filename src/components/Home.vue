@@ -1,6 +1,10 @@
 <template>
   <div id="Home">
-    <div id="background"></div>
+    <div id="background">
+      <div id="about">
+        
+        </div>
+    </div>
     <div id="conbackground">
       <div id="text" position: relative>
         <input type="textarea" id="token" placeholder="LOGIN TOKEN" />
