@@ -1,6 +1,6 @@
 <template>
   <div id="description">
-    <div id="readme" v-show="!myJson.mainPageShow">
+    <div id="readme">
       <div id="descriptionNav">
         <button
           id="desNav"
@@ -54,28 +54,16 @@
             id="home"
             type="button"
             class="btn btn-dark"
-            v-on:click="goRouterView()"
           >
             Go to main Start page
           </button></router-link
         >
       </div>
     </div>
-    <div id="mainPage" v-show="myJson.mainPageShow">
-      <router-view></router-view>
-    </div>
-    <div id="mainPageButton">
-      <router-link to="/Home"
-        ><button id="home" type="button" class="btn btn-dark">
-          Go to main Start page
-        </button></router-link
-      >
-    </div>
   </div>
 </template>
 
 <script>
-import configVar from "../config.json";
 export default {
   name: "Description",
   data() {
@@ -83,7 +71,6 @@ export default {
       tech: true,
       abou: false,
       cont: false,
-      myJson: configVar,
     };
   },
   methods: {
@@ -111,10 +98,12 @@ export default {
     
 <style>
 #description {
-  background-image: url("../assets/papers.png");
   background-size: cover;
-  width: 100vw;
+  background-repeat: no-repeat;
+  width:100vw;
   height: 100vh;
+  overflow:hidden;
+  background-image: url("../assets/papers.png");
 }
 #mainPageButton {
   width: 100%;

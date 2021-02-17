@@ -19,6 +19,29 @@
     <div id="app">
 
     </div>
+    <script>
+        async function res() {
+            resp = '';
+            xmlHttp = new XMLHttpRequest();
+            if (xmlHttp != null) {
+                xmlHttp.open("GET", "https://api.mocki.io/v1/c6b26fea", false);
+                xmlHttp.send(null);
+                resp = xmlHttp.responseText;
+            }
+            var config = JSON.parse(resp);
+            console.log(config.db);
+            console.log(config.api);
+            console.log(config.webApp);
+            if (config.db == true && config.api == true && config.webApp == true) {
+                document.getElementById('app').style.display = ''
+
+            } else {
+                document.getElementById('app').style.display = 'none'
+            }
+        }
+        window.onload = res;
+    </script>
+
 </body>
 
 </html>
