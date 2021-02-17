@@ -1,7 +1,14 @@
 <template>
   <div id="Home">
-    <div id="background"></div>
+    <div id="background">
+    </div>
+    <div id="elements">
+       <div id="about">
+       <router-link to="/"> <img src="../assets/about.png" id="imageAbout" alt="About"  /></router-link>
+        </div>
+    </div>
     <div id="conbackground">
+      
       <div id="text" position: relative>
         <input type="textarea" id="token" placeholder="LOGIN TOKEN" />
         <div id="button">
@@ -26,6 +33,11 @@ export default {
       alert(this.login_token);
     },
   },
+  beforeCreate() {
+      if(!this.$store.state.appState.stateOfApp){
+        this.$router.go(-1);
+      }
+    },
 };
 </script>
 
@@ -52,6 +64,12 @@ export default {
   left: 20%;
   border-radius: 1000px;
 }
+#elements{
+  position: absolute;
+  background-size: cover;
+  width: 100%;
+  height:100%;
+}
 #token {
   margin-top: 60%;
   margin-left: 30%;
@@ -72,10 +90,17 @@ export default {
   background-image: url("../assets/right_arrow.gif");
   margin-top: 60%;
   margin-left: 10%;
-
   opacity: 0.9;
   background-size: cover;
   height: 40px;
   width: 80px;
+}
+#imageAbout{
+width: 4vw;
+margin: 1%;
+float:right;
+}
+#about{
+
 }
 </style>

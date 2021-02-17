@@ -1,22 +1,43 @@
 <template>
-  <div id="description">
-    
-    
-    <router-link to="/Home"><button>Go to main Start page</button></router-link>
+  <div id="myRouter">
     <router-view></router-view>
-    <Descript />
   </div>
 </template>
 <script>
-import Descript from "./components/Descript.vue";
+//import Descript from './components/Descript.vue'
 export default {
-  name: "Description",
+  name: "App",
   components: {
-    Descript,
+    //Descript
   },
+  data(){
+    return{
+     
+    };
+  },
+  methods: {
+    res:function() {
+      var resp = " ";
+      var xmlHttp = new XMLHttpRequest();
+      if (xmlHttp != null) {
+        xmlHttp.open("GET", "https://api.mocki.io/v1/cad7ff04", false);
+        xmlHttp.send(null);
+        resp = xmlHttp.responseText;
+      }
+      var config = JSON.parse(resp);
+      if (config.db == true && config.api == true && config.webApp == true) {
+        this.$store.commit("changeState",true)
+      } else {
+        this.$store.commit("changeState",false)
+      }
+    },
+    
+  },
+  mounted() {
+      this.$nextTick(this.res());
+    },
 };
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -26,7 +47,7 @@ export default {
   color: #2c3e50;
   margin: 0%;
   padding: 0%;
-  width: 100%;
-  height: 100%
+  width: 10vw;
+  height: 100vh;
 }
 </style>
