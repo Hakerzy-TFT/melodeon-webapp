@@ -1,22 +1,14 @@
 <template>
-  <div id="description">
-    
-    
-    <router-link to="/Home"><button>Go to main Start page</button></router-link>
+  <div id="myRouter">
     <router-view></router-view>
-    <Descript />
   </div>
 </template>
 <script>
-import Descript from "./components/Descript.vue";
 export default {
-  name: "Description",
-  components: {
-    Descript,
-  },
+  name: "App",
+  components: {},
 };
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -26,7 +18,7 @@ export default {
   color: #2c3e50;
   margin: 0%;
   padding: 0%;
-  width: 100%;
-  height: 100%
+  width: 10vw;
+  height: 100vh;
 }
 </style>
